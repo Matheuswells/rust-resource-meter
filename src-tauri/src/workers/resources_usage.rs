@@ -20,14 +20,6 @@ fn get_memory_usage(system: &System) -> u16 {
     ((used_memory as f32 / total_memory as f32) * 100.0) as u16
 }
 
-// fn get_cpu_usage(system: &System) -> f32 {
-//     let mut used_cpu: f32 = 0.0;
-//     for cpu in system.cpus() {
-//         used_cpu += cpu.cpu_usage();
-//     }
-//     used_cpu / system.cpus().len() as f32
-// }
-
 fn get_cpu_data(system: &System) -> CpuData {
     let mut cpu_percent: Vec<u16> = Vec::new();
     for cpu in system.cpus() {
